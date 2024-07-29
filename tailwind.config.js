@@ -7,7 +7,7 @@ module.exports = {
         darkNavy: "#242742",
         paleNavy: "#36384D",
         vermellion: "#FF6155",
-        vermellionInput: "rgba(255, 97, 85, 15%)",
+        vermellionInput: "#FCE7E5",
         paleGrey: "rgba(25, 24, 43, 25%)",
         gradientOrange: "#FF6A3A",
         gradientPink: "#FF527B",

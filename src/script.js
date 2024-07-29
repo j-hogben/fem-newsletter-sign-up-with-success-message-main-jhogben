@@ -79,9 +79,13 @@ const validateForm = (formElement) => {
       if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
         errorContainer.textContent = option.errorMessage(input, label);
         input.classList.add(
-          "bg-vermellionInput",
-          "border-vermellion",
-          "text-vermellion",
+          // THESE STYLES ARE LOCATED IN /src/styles.css
+          "input-error-style",
+          "input-autofill-override-error",
+        );
+        input.classList.remove(
+          // THESE STYLES ARE LOCATED IN /src/styles.css
+          "input-autofill-override",
         );
         errorContainer.classList.add("opacity-100");
         formGroupError = true;
@@ -91,10 +95,14 @@ const validateForm = (formElement) => {
 
     if (!formGroupError) {
       errorContainer.textContent = "";
+      input.classList.add(
+        // THESE STYLES ARE LOCATED IN /src/styles.css
+        "input-autofill-override",
+      );
       input.classList.remove(
-        "bg-vermellionInput",
-        "border-vermellion",
-        "text-vermellion",
+        // THESE STYLES ARE LOCATED IN /src/styles.css
+        "input-error-style",
+        "input-autofill-override",
       );
       errorContainer.classList.remove("opacity-100");
     }
@@ -119,6 +127,8 @@ const validateForm = (formElement) => {
 // ////////////////////////////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////////////////////////////
 // ////////////////////////////////////////////////////////////////////////////////////
+
+// ~ ~ ~ ~ ~ ~ ~ RUN ON FORM SUBMIT ~ ~ ~ ~ ~ ~ ~
 
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();

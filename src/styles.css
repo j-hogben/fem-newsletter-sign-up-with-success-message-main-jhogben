@@ -34,4 +34,32 @@ body {
   .btn-primary-gradient:hover::before {
     @apply opacity-100;
   }
+
+  .input-error-style {
+    background-color: #fce7e5 !important;
+    color: #ff6155 !important;
+    border: 1px solid #ff6155 !important;
+  }
+
+  /* INPUT AUTOFILL / AUTOCOMPLETE BROWSER DEFAULT OVERRIDE STYLES */
+  .input-autofill-override:-webkit-autofill,
+  .input-autofill-override:-webkit-autofill:hover,
+  .input-autofill-override:-webkit-autofill:focus,
+  .input-autofill-override:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: #242742 !important;
+    border: 1px solid #242742 !important;
+  }
+
+  /* INPUT AUTOFILL / AUTOCOMPLETE BROWSER DEFAULT ERROR OVERRIDE STYLES */
+  .input-autofill-override-error:-webkit-autofill,
+  .input-autofill-override-error:-webkit-autofill:hover,
+  .input-autofill-override-error:-webkit-autofill:focus,
+  .input-autofill-override-error:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #fce7e5 inset !important;
+    box-shadow: 0 0 0px 1000px #fce7e5 inset !important;
+    -webkit-text-fill-color: #ff6155 !important;
+    border: 1px solid #ff6155 !important;
+  }
 }
