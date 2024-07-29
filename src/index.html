@@ -13,7 +13,7 @@
     />
 
     <link rel="stylesheet" href="/dist/styles.css" />
-    <script src="./script.js" defer></script>
+    <script src="/src/script.js" defer></script>
 
     <title>Frontend Mentor | Newsletter sign-up form</title>
   </head>
@@ -42,7 +42,7 @@
 
         <!-- Sign-up form start -->
         <form id="newsletter-form" action="">
-          <div class="form-group">
+          <div class="form-group" id="email-group">
             <div>
               <label for="email">Email address</label>
               <p class="error text-vermellion"></p>
@@ -63,17 +63,19 @@
         </form>
       </div>
 
-      <div class="success-page">
+      <div class="success-page hidden">
         <img src="/assets/images/icon-success.svg" alt="" />
         <!-- Success message start -->
         <h2>Thanks for subscribing!</h2>
         <p>
           A confirmation email has been sent to
-          <strong id="user-email"></strong>. Please open it and click the button
-          inside to confirm your subscription.
+          <strong id="confirmed-email"></strong>. Please open it and click the
+          button inside to confirm your subscription.
         </p>
         <!-- Success message end -->
-        <button>Dismiss message</button>
+        <button id="dismiss-button" onclick="switchVisibleSections()">
+          Dismiss message
+        </button>
       </div>
     </main>
   </body>
