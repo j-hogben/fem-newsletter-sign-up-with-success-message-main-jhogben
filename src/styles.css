@@ -17,3 +17,21 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary-gradient {
+    @apply bg-darkNavy relative w-full overflow-hidden rounded py-4 font-bold text-white transition-shadow duration-100 ease-in;
+  }
+  .btn-primary-gradient:hover {
+    @apply shadow-btnGradient;
+  }
+  .btn-primary-gradient span {
+    @apply relative z-10;
+  }
+  .btn-primary-gradient::before {
+    @apply from-gradientOrange to-gradientPink shadow-btnGradient absolute inset-0 bg-gradient-to-b opacity-0 transition-opacity duration-100 ease-in content-[''];
+  }
+  .btn-primary-gradient:hover::before {
+    @apply opacity-100;
+  }
+}

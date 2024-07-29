@@ -17,64 +17,97 @@
 
     <title>Frontend Mentor | Newsletter sign-up form</title>
   </head>
-  <body>
-    <main>
-      <div class="form-page">
+  <body class="w-full">
+    <main
+      class="text-darkNavy leading-normal lg:flex lg:min-h-dvh lg:items-center lg:justify-center"
+    >
+      <div
+        class="form-page lg:max-w-card lg:rounded-card flex flex-col bg-white lg:m-0 lg:flex-1 lg:flex-row lg:justify-between lg:gap-4 lg:p-6"
+      >
         <div
-          class="h-[284px] bg-[url('/assets/images/illustration-sign-up-mobile.svg')] bg-cover bg-center"
+          class="h-[284px] bg-[url('/assets/images/illustration-sign-up-mobile.svg')] bg-cover bg-center lg:order-2 lg:h-[593px] lg:w-1/2 lg:max-w-[400px] lg:bg-[url('/assets/images/illustration-sign-up-desktop.svg')]"
         ></div>
-        <h1 class="font-bold">Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul role="list">
-          <li>
-            <img src="/assets/images/icon-list.svg" alt="" />
-            <p>Product discovery and building what matters</p>
-          </li>
-          <li>
-            <img src="/assets/images/icon-list.svg" alt="" />
-            <p>Measuring to ensure updates are a success</p>
-          </li>
-          <li>
-            <img src="/assets/images/icon-list.svg" alt="" />
-            <p>And much more!</p>
-          </li>
-        </ul>
+        <div
+          class="lg:max-w-formPage px-6 py-10 lg:order-1 lg:mx-10 lg:my-auto lg:h-full lg:px-0"
+        >
+          <h1
+            class="text-mobHeading leading-primHeading lg:text-desktopHeading font-bold"
+          >
+            Stay updated!
+          </h1>
+          <p class="mt-6">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul role="list">
+            <li class="mt-6 flex items-start gap-4">
+              <img src="/assets/images/icon-list.svg" alt="" />
+              <p>Product discovery and building what matters</p>
+            </li>
+            <li class="mt-listItemSm flex items-start gap-4">
+              <img src="/assets/images/icon-list.svg" alt="" />
+              <p>Measuring to ensure updates are a success</p>
+            </li>
+            <li class="mt-listItemSm flex items-start gap-4">
+              <img src="/assets/images/icon-list.svg" alt="" />
+              <p>And much more!</p>
+            </li>
+          </ul>
 
-        <!-- Sign-up form start -->
-        <form id="newsletter-form" action="">
-          <div class="form-group" id="email-group">
-            <div>
-              <label for="email">Email address</label>
-              <p class="error text-vermellion"></p>
+          <!-- Sign-up form start -->
+          <form id="newsletter-form" class="mt-10">
+            <div class="form-group" id="email-group">
+              <div class="flex justify-between text-xs/normal">
+                <label for="email">Email address</label>
+                <p
+                  class="error text-vermellion font-bold opacity-0 transition duration-100"
+                ></p>
+              </div>
+              <input
+                required
+                pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="off"
+                placeholder="email@company.com"
+                class="border-paleGrey hover:border-darkNavy focus-within:border-darkNavy mt-2 w-full cursor-pointer rounded-lg border px-6 py-4 outline-none transition duration-100"
+              />
             </div>
-            <input
-              required
-              pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="email@company.com"
-              class="border"
-            />
-          </div>
 
-          <button type="submit">Subscribe to monthly newsletter</button>
-          <!-- Sign-up form end -->
-        </form>
+            <button type="submit" class="btn-primary-gradient mt-6">
+              <span>Subscribe to monthly newsletter</span>
+            </button>
+            <!-- Sign-up form end -->
+          </form>
+        </div>
       </div>
 
-      <div class="success-page hidden">
-        <img src="/assets/images/icon-success.svg" alt="" />
+      <div
+        class="success-page lg:p lg:rounded-card hidden h-dvh lg:max-w-[504px] flex-col bg-white px-6 pb-10 lg:h-fit lg:px-16 lg:pb-16"
+      >
+        <img
+          src="/assets/images/icon-success.svg"
+          alt=""
+          class="mt-[20dvh] max-w-[64px] lg:mt-12"
+        />
         <!-- Success message start -->
-        <h2>Thanks for subscribing!</h2>
-        <p>
+        <h2
+          class="text-mobHeading leading-primHeading lg:text-desktopHeading mt-10 font-bold"
+        >
+          Thanks for subscribing!
+        </h2>
+        <p class="mt-6">
           A confirmation email has been sent to
           <strong id="confirmed-email"></strong>. Please open it and click the
           button inside to confirm your subscription.
         </p>
         <!-- Success message end -->
-        <button id="dismiss-button" onclick="switchVisibleSections()">
-          Dismiss message
+        <button
+          id="dismiss-button"
+          class="btn-primary-gradient mt-auto lg:mt-10"
+          onclick="switchVisibleSections()"
+        >
+          <span>Dismiss message</span>
         </button>
       </div>
     </main>

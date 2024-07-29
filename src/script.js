@@ -14,7 +14,9 @@ formElement.setAttribute("novalidate", "");
 
 const switchVisibleSections = () => {
   formPage.classList.toggle("hidden");
+  formPage.classList.toggle("flex");
   successPage.classList.toggle("hidden");
+  successPage.classList.toggle("flex");
 };
 
 // ////////////////////////////////////////////////////////////////////////////////////
@@ -76,7 +78,12 @@ const validateForm = (formElement) => {
     for (const option of validationOptions) {
       if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
         errorContainer.textContent = option.errorMessage(input, label);
-        input.classList.add("bg-red-200", "border-red-900", "text-red-900");
+        input.classList.add(
+          "bg-vermellionInput",
+          "border-vermellion",
+          "text-vermellion",
+        );
+        errorContainer.classList.add("opacity-100");
         formGroupError = true;
         totalFormErrors++;
       }
@@ -84,7 +91,12 @@ const validateForm = (formElement) => {
 
     if (!formGroupError) {
       errorContainer.textContent = "";
-      input.classList.remove("bg-red-200", "border-red-900", "text-red-900");
+      input.classList.remove(
+        "bg-vermellionInput",
+        "border-vermellion",
+        "text-vermellion",
+      );
+      errorContainer.classList.remove("opacity-100");
     }
   };
 
