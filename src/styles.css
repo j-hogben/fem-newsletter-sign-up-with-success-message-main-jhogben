@@ -20,7 +20,7 @@ body {
 
 @layer components {
   .btn-primary-gradient {
-    @apply bg-darkNavy relative w-full overflow-hidden rounded py-4 font-bold text-white transition-shadow duration-100 ease-in;
+    @apply bg-darkNavy relative w-full overflow-hidden rounded-lg py-4 font-bold text-white transition-shadow duration-100 ease-in;
   }
   .btn-primary-gradient:hover {
     @apply shadow-btnGradient;
